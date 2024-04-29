@@ -1,11 +1,15 @@
 .card {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innerCard {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   background-color: antiquewhite;
   border-radius: 1rem;
-  width: 30%;
 }
 .title {
   font-weight: bold;

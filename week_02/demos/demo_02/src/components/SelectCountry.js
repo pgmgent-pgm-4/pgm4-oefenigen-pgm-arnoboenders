@@ -1,3 +1,4 @@
+import { FormControl, MenuItem, InputLabel, Select } from "@mui/material";
 import React from "react";
 
 export default function SelectCountry({ countries, setCountry, country }) {
@@ -5,12 +6,21 @@ export default function SelectCountry({ countries, setCountry, country }) {
     setCountry(e.target.value);
   };
   return (
-    <select value={country} onChange={handlechange}>
-      {countries.map((country, i) => (
-        <option key={`country-${i}`} value={country.value}>
-          {country.name}
-        </option>
-      ))}
-    </select>
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="demo-select-small-label">Countries</InputLabel>
+      <Select
+        labelId="demo-select-small-label"
+        id="demo-select-small"
+        label="Countries"
+        value={country}
+        onChange={handlechange}
+      >
+        {countries.map((country, i) => (
+          <MenuItem key={`country-${i}`} value={country.value}>
+            {country.name}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

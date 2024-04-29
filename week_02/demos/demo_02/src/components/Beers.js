@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Beer from "./Beer";
 import SelectCountry from "./SelectCountry";
-import styles from "./beers.module.css";
+import {
+  Alert,
+  Card,
+  Divider,
+  LinearProgress,
+  Typography,
+} from "@mui/material";
 
 export default function Beers() {
   const [country, setCountry] = useState("italy");
@@ -48,12 +54,21 @@ export default function Beers() {
         setCountry={setCountry}
         country={country}
       />
-      {isLoading && <p>... Loading</p>}
+      {isLoading && (
+        <>
+          <Alert severity="warning">Loading</Alert>
+          <LinearProgress color="success" />
+        </>
+      )}
       {!isLoading && (
         <>
-          <h1 className="styles.error">{country}</h1>
+          <Alert severity="success">Everything is loaded</Alert>
+          <Typography variant="h1">{country}</Typography>
+          <Divider />
           {beers.map((beer, i) => (
-            <Beer beer={beer} key={`beer-${i}`} />
+            <Card variant="outlined" sx={{ maxWidth: 345 }}>
+              <Beer beer={beer} key={`beer-${i}`} />
+            </Card>
           ))}
         </>
       )}
