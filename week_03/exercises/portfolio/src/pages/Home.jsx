@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Container maxWidth="sm">
       <center>
-        <Typography variant="h1">About</Typography>;
+        <Typography variant="h1">Home</Typography>
       </center>
     </Container>
   );

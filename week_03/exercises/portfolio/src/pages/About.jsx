@@ -5,7 +5,7 @@ export default function About() {
   return (
     <Container maxWidth="sm">
       <center>
-        <Typography variant="h1">About</Typography>;
+        <Typography variant="h1">About</Typography>
       </center>
     </Container>
   );
