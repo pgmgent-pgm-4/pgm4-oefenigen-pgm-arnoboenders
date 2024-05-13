@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.border {
+    border: 0.1rem black solid;
+}
+.symbol {
+  font-size: 2rem;
+}
